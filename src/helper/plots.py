@@ -6,31 +6,33 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS 
 
 def delete_all_files_in_image():
-     """ 
-      Deletes all files in image directory 
-     """
+    """ 
+        Deletes all files in image directory 
+    """
     
-     [os.remove(file) for file in glob.glob(os.path.join(os.getcwd(),"src/static/images/","*.png"))]
+    [os.remove(file) for file in glob.glob(os.path.join(os.getcwd(),"src/static/images/","*.png"))]
 
 def get_filename(name):
-     """
-      Generated imagename and filename  
+    """
+        Generated imagename and filename
     Parameters: 
-     name: Suggested name ( type of plot) to add to image name  
+        name: Suggested name ( type of plot) to add to image name
     Returns: 
-    str : imagecname and file name  """
-
-    image_name= '{}_{}_plot.png'.format(datetime.datetime.now(),name)   
-    file_name = os.path.join(os.getcwd(),"src/static/images/",image_name)
+        str : imagecname and file name """
+        
+    image_name='{}_{}_plot.png'.format(datetime.datetime.now(),name)
+    file_name = os.path.join(os.getcwd(),"src/static/images/",image_name) 
     return image_name,file_name
+    
+   
 
 def generate_barplot(df,name,xlabel,ylabel,rot_val=0): 
     """
-      Generated bar plot 
+        Generated bar plot 
     Parameters: 
-     dataframe , name , labels and label rotation
+        dataframe , name , labels and label rotation
     Returns: 
-       Saves the plot as image"""
+        Saves the plot as image"""
 
     image_name,file_name=get_filename(name)
     

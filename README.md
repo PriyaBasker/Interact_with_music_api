@@ -2,22 +2,24 @@
 
 ## Conda installation 
 
-### create environment  
+#### create environment  
 `conda env create -f environment.yml`
 
-### update environment 
+#### update environment 
 `conda env create -f environment.yml`
 
-### activate (air_env) environment
+####  activate (air_env) environment
 `conda activate air_env`
 
-### PIP installation
+####  PIP installation
 
 `virtualenv air_env`
+
 `source air_env/bin/activate`
+
 `pip install -r requirements.txt`
 
-## Start application
+###  Start application
 
 `python run.py`
 
@@ -26,18 +28,24 @@
 * Need internet connection the application to work. css and api calls uses  calls to web
 * css is extracted from www.w3schools.com/w3css/ and used in this sample 
 * Generated plots are saved as images and displayed in dashboard
-* Functions are made generic as possible and modularised 
+* Functions are made generic as much as possible and modularised 
 
 ## Types of plots in dashboard 
 * Statics
+    * Maximum number of words in a Song
+    * Mean Words 
+    * Median Words in a Song
+    * Minimum number of words in a Song
+    * Modal Words in a Song
+    * Standrad deviation 
 * Histogram
 * Word Cloud
 * Sentiment Analysis 
 
-## Applcation layout
+## Application layout
 
     .
-    ├── src                   # Source files
+    ├── src                      # Source files
     ├────── config               # Config files (parameters used in application)
     ├────── data                 # Data files  (functions to fetch data such as artists, title, lyrics)
     ├────── helper               # Helper files (modular functions used in application)
@@ -47,4 +55,21 @@
     ├── test                   
     ├── environment.yml          # To create environment using conda
     ├── requirements.py          # To create environment using PIP
-    └── README.m
+    └── README.md
+
+## Architectural diagram 
+
+
+## Future scope 
+
+    * Dockerising the application
+    * Error handling can be improved
+    * Unit test can be added 
+    * Git CI/CD pipeline 
+    
+## Screen shots 
+![Page 1 ](/src/static/Choose.png)
+![Page 2 ](/src/static/Songselection.png)
+![Page 3 ](/src/static/Dashboard.png)
+
+
