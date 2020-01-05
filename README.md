@@ -1,6 +1,6 @@
 # Interact with music api - Lyrics Analysis
 
- This sample application written is in python and flask . Given an artist name , it will search for artist , find ids and from the selected artist it will fetch 20 titles to performs lyrics analysis to provide dashboard. 
+ This sample application is written in python and flask . Given an artist name , it will search for artist , find ids and from the selected artist it will fetch 20 titles to performs lyrics analysis to provide dashboard. 
 
 ## Flowchart diagram 
 ![Flowchart ](/src/static/flowchart.png)
