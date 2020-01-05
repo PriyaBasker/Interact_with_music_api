@@ -1,6 +1,6 @@
 # Steps to install 
 
-## Conda installation 
+### Conda installation 
 
 #### create environment  
 `conda env create -f environment.yml`
@@ -11,9 +11,9 @@
 ####  activate (air_env) environment
 `conda activate air_env`
 
-####  PIP installation
+###  PIP installation
 
-`virtualenv air_env`
+` virtualenv -p python3 air_env`
 
 `source air_env/bin/activate`
 
@@ -23,6 +23,9 @@
 
 `python run.py`
  Type 'http:\localhost:5000` in the browser 
+
+### Run unit test 
+`python -m unittest`
 
 ## Notes
 
@@ -36,7 +39,7 @@
 #### Request library 
 Api Calls were really slow especially lyrics api. Requests  has one major drawback: it is synchronous. Calling requests.get("http://example.org") blocks the program until the HTTP server replies completely. With limit of 20 lyrics using  `request.get()` method  it took between **20-25 secs** . 
 
-#### asyncio and aiohttp 
+#### asyncio and aiohttp  library
 Starting with version 3.5, Python offers asynchronicity as its core using asyncio. The aiohttp library provides an asynchronous HTTP client built on top of asyncio. This library allows sending requests in series but without waiting for the first reply to come back before sending the new one. In contrast to HTTP pipelining, aiohttp sends the requests over multiple connections in parallel, avoiding the ordering issue explained earlier
 asyncio is often a perfect fit for IO-bound and high-level structured network code.
 With limit of 20 lyrics using  `asyncio and aiohttp` method  it took between **6-9 secs** . 
@@ -63,19 +66,20 @@ With limit of 20 lyrics using  `asyncio and aiohttp` method  it took between **6
     ├────── static               # Static files (images)
     ├────── templates            # Templates ( html files)
     ├────── views.py             # Views intantiates Flask application
-    ├── test                   
+    ├── test                     # Folder for all unit test
     ├── environment.yml          # To create environment using conda
     ├── requirements.py          # To create environment using PIP
     └── README.md
 
-## Architectural diagram 
+## Flowchart diagram 
+![Flowchart ](/src/static/flowchart.png)
 
 
 ## Future scope 
 
     * Dockerising the application
     * Error handling can be improved
-    * Unit test can be added 
+    * Unit test, Integration and acceptance test can be added 
     * Git CI/CD pipeline 
     
 ## Screen shots 
