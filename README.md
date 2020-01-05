@@ -1,3 +1,10 @@
+# Interact with music api - Lyrics Analysis
+
+ This sample application written is in python and flask . Given an artist name , it will search for artist , find ids and from the selected artist it will fetch 20 titles to performs lyrics analysis to provide dashboard. 
+
+## Flowchart diagram 
+![Flowchart ](/src/static/flowchart.png)
+
 # Steps to install 
 
 ### Conda installation 
@@ -70,10 +77,6 @@ With limit of 20 lyrics using  `asyncio and aiohttp` method  it took between **6
     ├── environment.yml          # To create environment using conda
     ├── requirements.py          # To create environment using PIP
     └── README.md
-
-## Flowchart diagram 
-![Flowchart ](/src/static/flowchart.png)
-
 
 ## Future scope 
 
