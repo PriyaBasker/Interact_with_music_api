@@ -17,11 +17,12 @@
 
 `source air_env/bin/activate`
 
-`pip install -r requirements.txt`
+`pip3 install -r requirements.txt`
 
 ###  Start application
 
 `python run.py`
+ Type 'http:\localhost:5000` in the browser 
 
 ## Notes
 
@@ -29,6 +30,16 @@
 * css is extracted from www.w3schools.com/w3css/ and used in this sample 
 * Generated plots are saved as images and displayed in dashboard
 * Functions are made generic as much as possible and modularised 
+
+## Performance improvement 
+
+#### Request library 
+Api Calls were really slow especially lyrics api. Requests  has one major drawback: it is synchronous. Calling requests.get("http://example.org") blocks the program until the HTTP server replies completely. With limit of 20 lyrics using  `request.get()` method  it took between **20-25 secs** . 
+
+#### asyncio and aiohttp 
+Starting with version 3.5, Python offers asynchronicity as its core using asyncio. The aiohttp library provides an asynchronous HTTP client built on top of asyncio. This library allows sending requests in series but without waiting for the first reply to come back before sending the new one. In contrast to HTTP pipelining, aiohttp sends the requests over multiple connections in parallel, avoiding the ordering issue explained earlier
+asyncio is often a perfect fit for IO-bound and high-level structured network code.
+With limit of 20 lyrics using  `asyncio and aiohttp` method  it took between **6-9 secs** . 
 
 ## Types of plots in dashboard 
 * Statics
@@ -38,9 +49,9 @@
     * Minimum number of words in a Song
     * Modal Words in a Song
     * Standrad deviation 
-* Histogram
-* Word Cloud
-* Sentiment Analysis 
+* Histogram - This shows the count of words in lyrics in y axis and lyrics in xaxis
+* Word Cloud - Data visualisation for representing text data in which the size of each word indicates its frequency or importance
+* Sentiment Analysis - VADER Sentiment Analysis. VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool that is specifically attuned to sentiments expressed on texts. It is used to provide the percentage of positive, negative and netural sentiments. 
 
 ## Application layout
 
