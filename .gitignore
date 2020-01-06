@@ -1,4 +1,4 @@
-**/static/images/
+/static/images/*
 **/air_env
 *.pyc
 **/__pycache__

@@ -20,8 +20,9 @@ def get_filename(name):
     Returns: 
         str : imagecname and file name """
         
-    image_name='{}_{}_plot.png'.format(datetime.datetime.now(),name)
-    file_name = os.path.join(os.getcwd(),"src/static/images/",image_name) 
+    image_name='{}_{}_plot.png'.format(datetime.datetime.now().strftime("%Y-%m-%d"),name)
+    file_name = os.path.join(os.path.sep,os.getcwd(),"src","static","images",image_name)
+
     return image_name,file_name
     
    
